@@ -1,1 +1,15 @@
-data_cleaning.py
+.DS_Store
+Dataset/GeographicFiles/tl_2022_us_zcta520.cpg
+Dataset/GeographicFiles/tl_2022_us_zcta520.dbf
+Dataset/GeographicFiles/tl_2022_us_zcta520.prj
+Dataset/GeographicFiles/tl_2022_us_zcta520.shp
+Dataset/GeographicFiles/tl_2022_us_zcta520.shp.ea.iso.xml
+Dataset/GeographicFiles/tl_2022_us_zcta520.shp.iso.xml
+Dataset/GeographicFiles/tl_2022_us_zcta520.shx
+Dataset/GeographicFiles/tl_2024_us_county.cpg
+Dataset/GeographicFiles/tl_2024_us_county.dbf
+Dataset/GeographicFiles/tl_2024_us_county.prj
+Dataset/GeographicFiles/tl_2024_us_county.shp
+Dataset/GeographicFiles/tl_2024_us_county.shp.ea.iso.xml
+Dataset/GeographicFiles/tl_2024_us_county.shp.iso.xml
+Dataset/GeographicFiles/tl_2024_us_county.shx
