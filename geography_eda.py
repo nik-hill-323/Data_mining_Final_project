@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # %%
-tcc = pd.read_csv("telecom_customer_churn.csv")
+tcc = pd.read_csv("Dataset/telecom_customer_churn.csv")
 # %%
 print(tcc["Phone Service"].unique())
 print(tcc["Internet Service"].unique())
@@ -60,5 +60,34 @@ ax.axis('off')
 plt.tight_layout()
 plt.show()
 
+
+# %%
+import geopandas as gpd
+import pandas as pd
+import matplotlib.pyplot as plt
+from shapely.geometry import Point
+import seaborn as sns
+
+# Example lat/lon list
+coords = list(zip(tcc['']))
+
+# Convert to GeoDataFrame
+df = pd.DataFrame(coords, columns=['lat', 'lon'])
+geometry = [Point(xy) for xy in zip(df['lon'], df['lat'])]
+gdf = gpd.GeoDataFrame(df, geometry=geometry, crs='EPSG:4326')
+
+# Project to a metric CRS (important for KDE)
+gdf = gdf.to_crs(epsg=3310)  # California Albers
+
+# Plot KDE heatmap using seaborn
+x = gdf.geometry.x
+y = gdf.geometry.y
+
+plt.figure(figsize=(8, 8))
+sns.kdeplot(x=x, y=y, cmap="Reds", shade=True, bw_adjust=0.5)
+plt.title("California Heatmap of Points")
+plt.axis("off")
+plt.tight_layout()
+plt.show()
 
 # %%
